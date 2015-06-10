@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: ubuntupause-controller
+spec:
+  replicas: 1
+  selector:
+    name: ubuntu
+  template:
+    metadata:
+      labels:
+        name: ubuntu
+    spec:
+      containers:
+        - name: ubuntu
+          image: dockerreg.99cloud.net/kubeubuntu

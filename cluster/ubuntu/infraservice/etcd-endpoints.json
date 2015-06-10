@@ -1,0 +1,17 @@
+{
+    "kind": "Endpoints",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "etcd-service"
+    },
+    "subsets": [
+        {
+            "addresses": [
+                { "IP": "127.0.0.1" }
+            ],
+            "ports": [
+                { "port": 4001 }
+            ]
+        }
+    ]
+}

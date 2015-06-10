@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-svc-clusterip
+spec:
+  ports:
+    - port: 8001
+      targetPort: 80
+      protocol: TCP
+  selector:
+    name: nginx
+  type: ClusterIP
+  #publicIPs:
+  #  - 192.168.0.201
+  #  - 192.168.0.202
+  #  - 192.168.0.205

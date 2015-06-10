@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: etcd-br-controller
+spec:
+  replicas: 3
+  selector:
+    name: etcd-br
+  template:
+    metadata:
+      labels:
+        name: etcd-br
+    spec:
+      containers:
+        - name: etcd-br
+          image: dockerreg.99cloud.net/etcd-browser:05f678
+          ports:
+            - containerPort: 8000
+          env:
+          - name: ETCD_HOST 
+            value: 192.168.3.3 

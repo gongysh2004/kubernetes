@@ -58,3 +58,4 @@ www/master/shared/config/development.json
 
 # Karma output
 www/test_out
+cluster/ubuntu/binaries/

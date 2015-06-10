@@ -53,7 +53,8 @@ cp $ETCD/etcd $ETCD/etcdctl binaries/minion
 echo "Download kubernetes release ..."
 K8S_VERSION="v0.18.0"
 if [ ! -f kubernetes.tar.gz ] ; then
-    curl -L https://github.com/GoogleCloudPlatform/kubernetes/releases/download/${K8S_VERSION}/kubernetes.tar.gz -o kubernetes.tar.gz
+    #curl -L https://github.com/GoogleCloudPlatform/kubernetes/releases/download/${K8S_VERSION}/kubernetes.tar.gz -o kubernetes.tar.gz
+    cp ../../_output/release-tars/kubernetes.tar.gz  kubernetes.tar.gz
     tar xzf kubernetes.tar.gz
 fi
 pushd kubernetes/server

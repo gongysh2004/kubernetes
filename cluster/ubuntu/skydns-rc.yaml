@@ -7,7 +7,7 @@ metadata:
     k8s-app: kube-dns-v3
     kubernetes.io/cluster-service: "true"
 spec:
-  replicas: {{ pillar['dns_replicas'] }}
+  replicas: 1
   selector:
     k8s-app: kube-dns
     version: v3
@@ -33,15 +33,15 @@ spec:
         image: dockerreg.99cloud.net/google_containers/kube2sky:1.9
         args:
         # command = "/kube2sky"
-        - -domain={{ pillar['dns_domain'] }}
-        - -kube_master_url=http://192.168.0.201:8080
+        - -domain=cluster.local
+        - -kube_master_url=http://192.168.3.12:8080
       - name: skydns
         image: dockerreg.99cloud.net/google_containers/skydns
         args:
         # command = "/skydns"
         - -machines=http://localhost:4001
         - -addr=0.0.0.0:53
-        - -domain={{ pillar['dns_domain'] }}.
+        - -domain=cluster.local.
         ports:
         - containerPort: 53
           name: dns

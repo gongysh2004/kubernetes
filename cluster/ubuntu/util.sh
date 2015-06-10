@@ -226,7 +226,9 @@ KUBELET_OPTS="--address=0.0.0.0 \
 --api_servers=http://$2:8080 \
 --logtostderr=true \
 --cluster_dns=$3 \
---cluster_domain=$4"
+--cluster_domain=$4 \
+--pod-infra-container-image=dockerreg.99cloud.net/google_containers/pause:0.8.0 \
+--v=10"
 EOF
 
 }

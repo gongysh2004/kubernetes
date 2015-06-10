@@ -1,0 +1,16 @@
+{
+    "kind": "Service",
+    "apiVersion": "v1",
+    "metadata": {
+        "name": "etcd-service"
+    },
+    "spec": {
+        "ports": [
+            {
+                "protocol": "TCP",
+                "port": 4001
+            }
+        ],
+        "clusterIP": "192.168.3.3"
+    }
+}
